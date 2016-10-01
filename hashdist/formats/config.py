@@ -9,9 +9,9 @@ from ..deps import jsonschema
 from .marked_yaml import (load_yaml_from_file, validate_yaml, ValidationError)
 
 def get_default_store_dir():
-	if os.environ['HASHDIST_ROOT_DIR'] is not None:
-		return os.environ['HASHDIST_ROOT_DIR'];
-	else:
+	try:
+		return os.environ['HASHDIST_ROOT_DIR']
+	except KeyError:
 		return os.path.expanduser('~/.hashdist')
 
 DEFAULT_STORE_DIR = get_default_store_dir()

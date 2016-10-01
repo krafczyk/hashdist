@@ -8,7 +8,7 @@ from .main import register_subcommand, DEFAULT_CONFIG_FILENAME_REPR
 import errno
 from .utils import parameter_pair
 from ..util.ansi_color import color
-from .. import hashdist_share_dir
+from .. import hashdist_bin_dir
 
 def add_build_args(ap):
     ap.add_argument('-j', metavar='CPUCOUNT', default=1, type=int, help='number of CPU cores to utilize')
@@ -318,7 +318,7 @@ class LoadProfile(object):
         else:
             sys.stdout.write("This command requires hit's shell integration.\n\n")
             sys.stdout.write("To initialize hit's shell commands, you must run in Bash:\n\n")
-            sys.stdout.write('    . %s/setup-env.sh\n\n' % hashdist_share_dir)
+            sys.stdout.write('    . %s/hit-setup-env.sh\n\n' % hashdist_bin_dir)
             sys.stdout.write("You can execute this line by hand or add it to your '.bashrc'. After that,\nrerun your last command.\n")
 
 

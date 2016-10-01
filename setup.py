@@ -18,7 +18,7 @@ setup(
     license = "BSD",
     keywords = "package management openscience hpc",
     url = "http://hashdist.github.io/",
-    scripts=['bin/hit', 'bin/hit-check-libs'],
+    scripts=['bin/hit', 'bin/hit-check-libs', 'bin/hit-setup-env.sh'],
     packages=[
           'hashdist',
           'hashdist.cli',
